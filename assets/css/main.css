@@ -266,9 +266,18 @@ hr {
   width: 40px;
   height: 40px;
   opacity: 1;
-  background: orange; }
+  background: #fff; }
   .checkbox-toggle:checked {
     border: 2px solid black; }
+
+#backgroundColor-input-solid2 {
+  background: black; }
+  #backgroundColor-input-solid2:checked {
+    border: 2px solid white; }
+
+#backgroundColor-input-solid-trans {
+  background: transparent;
+  border: 2px solid black; }
 
 #main-canvas {
   width: 100%;
@@ -301,7 +310,27 @@ canvas {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  z-index: 10000; }
+
+#loader-main {
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  background: grey;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+#loader-progress {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff8177), color-stop(0%, #ff867a), color-stop(21%, #ff8c7f), color-stop(52%, #f99185), color-stop(78%, #cf556c), to(#b12a5b));
+  background-image: -webkit-linear-gradient(left, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  background-image: -o-linear-gradient(left, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+  height: 100%;
+  width: 0%; }
 
 .wrapper {
   max-height: 100vh;
@@ -324,8 +353,10 @@ main {
   background: -o-linear-gradient(left, #4ca2cd, #67B26F);
   background: linear-gradient(to right, #4ca2cd, #67B26F);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
-  main p, main h1 {
+  main p, main h1, main h2 {
     margin: 0; }
+  main h2 {
+    font-size: 1rem; }
 
 .backgrounds {
   display: -webkit-box;

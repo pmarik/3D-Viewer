@@ -20,8 +20,19 @@
 
                 <section id="controls">
                     <div class="backgrounds">
-                        <p>background: </p>
-                        <input id="backgroundColor-input-solid" class="checkbox-toggle" type="checkbox" />
+                        <h2>Background: </h2>
+                        
+                        <input id="backgroundColor-input-solid-trans" type="radio" name="colorBackground" class="checkbox-toggle" value="transparent">
+                        <input id="backgroundColor-input-solid" type="radio" name="colorBackground" class="checkbox-toggle" value="white">
+                        <input id="backgroundColor-input-solid2" type="radio" name="colorBackground" class="checkbox-toggle" value="black">
+
+                    </div>
+
+                    <div class="controls">
+                        <h2>Controls</h2>
+                        <p>Mouse Tracking</p>
+                        <p>Rotating</p>
+                        <p>Click and Drag</p>
                     </div>
                     
                     <div class="perspective">
@@ -33,6 +44,9 @@
                     <div id="model_target" class="loading">
                     </div>
                     <div id="loader"></div>
+                    <div id="loader-main">
+                        <div id="loader-progress"></div>
+                    </div>
                 </section>
         
 

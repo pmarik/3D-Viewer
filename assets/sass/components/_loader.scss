@@ -1,0 +1,32 @@
+
+#loader{
+    position: absolute;
+    height: 100%; 
+    width: 1000px;
+    top: 0;
+    margin-left: 188px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+   
+}
+
+
+#loader-main{
+    position: absolute;
+    width: 250px;
+    height: 30px;
+    background: grey;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+#loader-progress{
+    background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    height: 100%;
+    width: 0%;
+}

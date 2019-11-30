@@ -12,6 +12,10 @@ let modelLoaded = false;
 
 let placement = document.getElementById("model_target");
 let loaderPercent = document.getElementById('loader');
+let loaderProgress = document.getElementById('loader-progress');
+let loaderMain = document.getElementById('loader-main');
+let solidColorToggle = document.getElementById('backgroundColor-input-solid');
+let solidColorToggle2 = document.getElementById('backgroundColor-input-solid2');
 
 
 
@@ -64,10 +68,12 @@ function init() {
                 console.log(xhr);
                 console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
                 loaderPercent.innerHTML = `<p> ${(xhr.loaded / xhr.total * 100).toFixed(0)}% </p>`;
+                loaderProgress.setAttribute('style',  `width: ${(xhr.loaded / xhr.total * 100).toFixed(0)}%`);
 
                 if((xhr.loaded / xhr.total * 100) == 100){
                     modelLoaded = true;
                     loaderPercent.setAttribute('style', 'display: none;');
+                    loaderMain.setAttribute('style', 'display: none;');
                 } 
 
         },
@@ -79,7 +85,9 @@ function init() {
         }
     );
 
+
    
+
 
 
     renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true  } );
@@ -149,6 +157,19 @@ function render() {
     camera.updateProjectionMatrix();
 
     requestAnimationFrame( render );
+
+    //set background color based on checkbox inputs
+    if (solidColorToggle.checked){
+        scene.background = new THREE.Color(0xfffffff); //Set background color 
+    }
+
+    else if(solidColorToggle2.checked){
+        scene.background = new THREE.Color(0x0000000); //Set background color 
+    }
+   
+    else{
+        scene.background = null;
+    }
 
     if (modelLoaded){
         update();

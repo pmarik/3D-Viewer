@@ -20,12 +20,13 @@
 // Base  
 @import 'base/reset';
 @import 'base/page';
-@import 'base/typography';
+@import 'base/typography'; 
   
 
 // Components 
 @import 'components/controls';
 @import 'components/main-canvas';
+@import 'components/loader';
 // Layout
 @import 'layout/wrapper';
 @import 'layout/home';

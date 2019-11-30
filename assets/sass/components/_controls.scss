@@ -12,9 +12,22 @@
     width: 40px;
     height: 40px;
     opacity: 1;
-    background: orange;
+    background: #fff;
 
     &:checked{
         border: 2px solid black;
     }
+}
+
+#backgroundColor-input-solid2{
+    background: black;
+
+    &:checked{
+        border: 2px solid white;
+    }
+}
+
+#backgroundColor-input-solid-trans{
+    background: transparent;
+    border: 2px solid black;
 }
