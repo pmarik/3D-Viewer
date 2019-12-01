@@ -29,13 +29,10 @@ let isMouseControl = document.getElementById('control-input-mouse');
 let isRotateControl = document.getElementById('control-input-rotating');
 let isDragControl = document.getElementById('control-input-drag');
 
-// controls = new THREE.OrbitControls(camera, renderer.domElement);
-// controls.autoRotate = true;
-// controls.autoRotateSpeed = 1;
-
 
 
 window.addEventListener('DOMContentLoaded', init);
+
 
 /**
  * Initial camera setup and loading of 3D model
@@ -49,6 +46,7 @@ function init() {
     camera = new THREE.PerspectiveCamera( 45, 1, 1, 1000);
     camera.position.set(0, 0, 40)
     //camera.position.y = 0;
+    camera.lookAt(0,0,0);
     
     // Initial orthographic camera setup to be referenced when toggling ortho-perspective view
     cameraOrtho = new THREE.OrthographicCamera( window.innerWidth / - 50, window.innerWidth / 50, window.innerHeight / 50, window.innerHeight / -50, - 500, 1000);
@@ -57,9 +55,10 @@ function init() {
     // Copy of perspective camera to be referenced when ortho-perspective view is toggled
     cameraPerspective = camera.clone();
 
-
     // Add lighting to scene
     var light = new THREE.DirectionalLight("#fff", 3); 
+    //var light = new THREE.AmbientLight(0xffffff);
+    //var light = new THREE.SpotLight(0xffffff);
     light.position.set( -70, 70, 100 ).normalize();
     scene.add(light);
     //var ambient = new THREE.AmbientLight("#FFF");
@@ -110,7 +109,10 @@ function init() {
 
 
     renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true  } );
-    renderer.setSize( 1000, 500 );
+
+    let initialSetSize = getWindowSizes();
+    
+    renderer.setSize( initialSetSize[0], initialSetSize[1] );
     
     placement.appendChild( renderer.domElement );
 
@@ -120,7 +122,12 @@ function init() {
     renderer.setClearColor(0x000000, 0); 
     renderer.gammaOutput = true;
     
-    document.addEventListener( 'mousemove', onMouseMove, false );
+    //document.addEventListener( 'mousemove', onMouseMove, false );
+
+    // // Rotate, zoom, and click-drag model
+    //   controls = new THREE.OrbitControls(camera, renderer.domElement);
+    //   controls.autoRotate = true;
+    //   controls.autoRotateSpeed = 1;
     
     window.addEventListener( 'resize', onResize, false );
  
@@ -130,6 +137,45 @@ function init() {
  
 
 } 
+
+/**
+ * Get canvas size width and height depending on window size
+ * @return {array} width and height value of new canvas
+ * 
+ */
+function getWindowSizes(){
+
+    let width;
+    let height;
+
+    let windowWidth = window.innerWidth;
+
+    if(windowWidth >= 2000){
+        width = 1200;
+        height = 600;
+    }
+
+    if(windowWidth >= 1000){
+         width = 800 ;
+         height = 500;
+    }
+    else if (windowWidth >= 700){
+        width = 650;
+        height = 300;
+    }
+
+    else if (windowWidth >=400){
+        width = 400;
+        height = 200;
+    }
+    else {
+       width = 225;
+       height = 200;
+    }
+
+    return [width, height];
+    
+}
 
 /** 
  * Track camera to mouse movement
@@ -154,8 +200,11 @@ function onMouseMove( event ) {
  * 
  */
 function onResize( event ) {
-    const width = 800 ;
-    const height = 500;
+
+    let resizeSetSize = getWindowSizes();
+
+    let width = resizeSetSize[0];
+    let height = resizeSetSize[1];
 
     windowHalf.set( width / 2, height / 2 );
     
@@ -166,28 +215,19 @@ function onResize( event ) {
 
 
 
-function update(controlString){
+function update(){
     var easeAmount = 8;
-    // if(controlString === "mouseControl"){
-    //     //document.addEventListener( 'mousemove', onMouseMove, false );
 
-        look.x += (mouse.x-look.x)/easeAmount;
-        look.y += (mouse.y-look.y)/easeAmount;
-        raycaster.setFromCamera(look, camera);
-        raycaster.ray.intersectPlane(plane, pointOfIntersection);
-        mesh.lookAt(pointOfIntersection);
+    console.log(window.innerWidth);
 
-    //     console.log(controlString);
+    document.addEventListener( 'mousemove', onMouseMove, false );
 
-    // }
+    look.x += (mouse.x-look.x)/easeAmount;
+    look.y += (mouse.y-look.y)/easeAmount;
+    raycaster.setFromCamera(look, camera);
+    raycaster.ray.intersectPlane(plane, pointOfIntersection);
+    mesh.lookAt(pointOfIntersection);
 
-    // else{
-    //     console.log("controlString");
-    //     //document.removeEventListener( 'mousemove', onMouseMove, false );
-
-
-    // }
-  
 }
 
 
@@ -222,16 +262,50 @@ function render() {
 
     if (modelLoaded){
 
-        //Pass controls to update depending on checked state determined by user
-        // if(isMouseControl.checked){
-        //     update("mouseControl");
-        // }
-        // else{
-        //     update("rotateControl");
-        // }
+        if(isMouseControl.checked){
+            update();
+        }
+        else if(isRotateControl.checked){
 
-        update();
+            document.removeEventListener( 'mousemove', onMouseMove, false );
+
+            // Rotate, zoom, and click-drag model
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 2;
+            controls.enableZoom = false;
+            controls.enablePan = false;
+            //    controls.maxDistance = 100;
+            //    controls.minDistance = 10;
+            //    controls.maxZoom = 2;
+            //    controls.minZoom = 0.5;
+            controls.dampingFactor = 0.002;
+            controls.rotateSpeed = 0.001;
+            //    controls.enabled = false;
+
+            controls.update();
+        }
+        else if(isDragControl.checked){
+            document.removeEventListener( 'mousemove', onMouseMove, false );
+
+            // Rotate, zoom, and click-drag model
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            //    controls.enabled = true;
+            controls.autoRotate = false;
+            controls.enableZoom = false;
+            controls.enablePan = true;
+            //    controls.maxDistance = 100;
+            //    controls.minDistance = 10;
+            //    controls.maxZoom = 2;
+            //    controls.minZoom = 0.5;
+            controls.dampingFactor = 0.002;
+            controls.rotateSpeed = 0.001;
+            
+            controls.update();
+        }
     }
+
+
     // if (resize(renderer)) {
     //     camera.aspect = canvas.clientWidth / canvas.clientHeight;
     //     camera.updateProjectionMatrix();

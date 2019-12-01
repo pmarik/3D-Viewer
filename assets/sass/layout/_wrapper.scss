@@ -3,10 +3,10 @@
     padding: 20px 80px 80px;
 
     @include breakpoint('<=medium'){ 
-        padding: 40px 50px 50px;
+        padding: 40px 30px 30px;
     }
 
     @include breakpoint('<=small'){
-        padding: 20px 30px 30px;
-    }
+        padding: 20px 5px 5px;
+    } 
 }

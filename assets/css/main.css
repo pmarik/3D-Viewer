@@ -254,6 +254,8 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-pack: distribute;
   justify-content: space-around;
   -webkit-box-align: center;
@@ -525,12 +527,12 @@ canvas {
   padding: 20px 80px 80px; }
   @media screen and (max-width: 980px) {
     .wrapper {
-      padding: 40px 50px 50px; } }
+      padding: 40px 30px 30px; } }
   @media screen and (max-width: 746px) {
     .wrapper {
-      padding: 20px 30px 30px; } }
+      padding: 20px 5px 5px; } }
 
-main {
+body {
   height: 100vh;
   background: #67B26F;
   /* fallback for old browsers */
@@ -541,9 +543,9 @@ main {
   background: -o-linear-gradient(left, #4ca2cd, #67B26F);
   background: linear-gradient(to right, #4ca2cd, #67B26F);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
-  main p, main h1, main h2 {
+  body p, body h1, body h2 {
     margin: 0; }
-  main h2 {
+  body h2 {
     font-size: 1rem;
     margin-right: 0.5rem; }
 
@@ -556,7 +558,8 @@ main {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  padding: 0px 10px; }
 
 .inner {
   display: -webkit-box;
