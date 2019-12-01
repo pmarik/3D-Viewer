@@ -277,31 +277,193 @@ input[type="radio"]:focus, :focus, :checked {
 
 #backgroundColor-input-solid2 {
   background: black; }
+  #backgroundColor-input-solid2::after {
+    content: "Black Background";
+    display: inline-block;
+    width: 7.4rem;
+    position: absolute;
+    background: #f4f4f4;
+    border-radius: 2px;
+    top: 44px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+    visibility: hidden;
+    z-index: 100001;
+    border: 1px solid grey;
+    padding: 5px;
+    color: #000;
+    font-size: 0.8rem; }
+  #backgroundColor-input-solid2:hover::after {
+    visibility: visible; }
+
+#backgroundColor-input-solid::after {
+  content: "White Background";
+  display: inline-block;
+  width: 7.4rem;
+  position: absolute;
+  background: #f4f4f4;
+  border-radius: 2px;
+  top: 44px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+  visibility: hidden;
+  z-index: 100001;
+  border: 1px solid grey;
+  padding: 5px;
+  color: #000;
+  font-size: 0.8rem; }
+
+#backgroundColor-input-solid:hover::after {
+  visibility: visible; }
 
 #backgroundColor-input-solid-trans {
   background: transparent;
   border: 2px solid black; }
+  #backgroundColor-input-solid-trans::after {
+    content: "Transparent Background";
+    display: inline-block;
+    width: 9.7rem;
+    position: absolute;
+    background: #f4f4f4;
+    border-radius: 2px;
+    top: 42px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+    visibility: hidden;
+    z-index: 100001;
+    border: 1px solid grey;
+    padding: 5px;
+    color: #000;
+    font-size: 0.8rem; }
+  #backgroundColor-input-solid-trans:hover::after {
+    visibility: visible; }
 
 #control-input-mouse, #control-input-rotating, #control-input-drag {
   background-image: url("images/icon_mouseTrack.svg");
   background-position: top left;
   background-repeat: no-repeat;
   background-size: cover; }
+  #control-input-mouse::after, #control-input-rotating::after, #control-input-drag::after {
+    content: "Mouse Tracking";
+    display: inline-block;
+    width: 6.5rem;
+    position: absolute;
+    background: #f4f4f4;
+    border-radius: 2px;
+    top: 44px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+    visibility: hidden;
+    z-index: 100001;
+    border: 1px solid grey;
+    padding: 5px;
+    color: #000;
+    font-size: 0.8rem; }
+  #control-input-mouse:hover::after, #control-input-rotating:hover::after, #control-input-drag:hover::after {
+    visibility: visible; }
 
 #control-input-rotating {
   background-image: url("images/icon_rotate.svg"); }
+  #control-input-rotating::after {
+    content: "Rotate";
+    display: inline-block;
+    width: 3.2rem;
+    position: absolute;
+    background: #f4f4f4;
+    border-radius: 2px;
+    top: 44px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+    visibility: hidden;
+    z-index: 100001;
+    border: 1px solid grey;
+    padding: 5px;
+    color: #000;
+    font-size: 0.8rem; }
+  #control-input-rotating:hover::after {
+    visibility: visible; }
 
 #control-input-drag {
   background-image: url("images/icon_clickdrag.svg"); }
+  #control-input-drag::after {
+    content: "Click and Drag";
+    display: inline-block;
+    width: 6.3rem;
+    position: absolute;
+    background: #f4f4f4;
+    border-radius: 2px;
+    top: 44px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+    visibility: hidden;
+    z-index: 100001;
+    border: 1px solid grey;
+    padding: 5px;
+    color: #000;
+    font-size: 0.8rem; }
+  #control-input-drag:hover::after {
+    visibility: visible; }
 
 #view-input-perspective, #view-input-orthographic {
   background-image: url("images/icon_perspective.svg");
   background-position: top left;
   background-repeat: no-repeat;
   background-size: cover; }
+  #view-input-perspective::after, #view-input-orthographic::after {
+    content: "Perspective";
+    display: inline-block;
+    width: 5rem;
+    position: absolute;
+    background: #f4f4f4;
+    border-radius: 2px;
+    top: 44px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+    visibility: hidden;
+    z-index: 100001;
+    border: 1px solid grey;
+    padding: 5px;
+    color: #000;
+    font-size: 0.8rem; }
+  #view-input-perspective:hover::after, #view-input-orthographic:hover::after {
+    visibility: visible; }
 
 #view-input-orthographic {
   background-image: url("images/icon_orthographic.svg"); }
+  #view-input-orthographic::after {
+    content: "Orthographic";
+    display: inline-block;
+    width: 5.3rem;
+    position: absolute;
+    background: #f4f4f4;
+    border-radius: 2px;
+    top: 44px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+    visibility: hidden;
+    z-index: 100001;
+    border: 1px solid grey;
+    padding: 5px;
+    color: #000;
+    font-size: 0.8rem; }
+  #view-input-orthographic:hover::after {
+    visibility: visible; }
 
 #main-canvas {
   width: 100%;

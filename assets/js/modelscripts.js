@@ -16,7 +16,7 @@ let loaderProgress = document.getElementById('loader-progress');
 let loaderMain = document.getElementById('loader-main');
 let solidColorToggle = document.getElementById('backgroundColor-input-solid');
 let solidColorToggle2 = document.getElementById('backgroundColor-input-solid2');
-
+let isOrthographic = document.getElementById('view-input-orthographic');
 
 
 
@@ -24,7 +24,6 @@ window.addEventListener('DOMContentLoaded', init);
 
 
 function init() {
-   
    
     
     scene = new THREE.Scene();
@@ -152,6 +151,19 @@ function update(){
 
 
 function render() {
+
+    if(isOrthographic.checked){
+        camera = new THREE.OrthographicCamera( window.innerWidth / - 50, window.innerWidth / 50, window.innerHeight / 50, window.innerHeight / -50, - 500, 1000);
+        camera.position.set(0, 0, 40)
+
+    }
+    else{
+        camera = new THREE.PerspectiveCamera( 80, 1, 1, 1000);
+        camera.position.set(0, 0, 40)
+
+
+    }
+   
 
     camera.aspect = renderer.domElement.clientWidth / renderer.domElement.clientHeight;
     camera.updateProjectionMatrix();

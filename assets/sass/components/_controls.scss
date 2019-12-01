@@ -25,11 +25,91 @@ input[type="radio"]:focus, :focus, :checked{
 
 #backgroundColor-input-solid2{
     background: black;
+
+    &::after{
+        content: "Black Background";
+        display: inline-block;
+        width: 7.4rem;
+        position: absolute; 
+        background: #f4f4f4;
+        border-radius: 2px;
+        top: 44px; 
+        left: 50%;
+        transform: translate(-50%);
+        visibility: hidden;
+        z-index: 100001;
+        border: 1px solid grey;
+        padding: 5px;
+        color: #000;
+        font-size: 0.8rem;
+
+    }
+
+    &:hover{
+        &::after{
+            visibility: visible;
+
+        }
+    }
+}
+
+#backgroundColor-input-solid{
+    &::after{
+        content: "White Background";
+        display: inline-block;
+        width: 7.4rem;
+        position: absolute; 
+        background: #f4f4f4;
+        border-radius: 2px;
+        top: 44px; 
+        left: 50%;
+        transform: translate(-50%);
+        visibility: hidden;
+        z-index: 100001;
+        border: 1px solid grey;
+        padding: 5px;
+        color: #000;
+        font-size: 0.8rem;
+
+    }
+
+    &:hover{
+        &::after{
+            visibility: visible;
+
+        }
+    }
 }
 
 #backgroundColor-input-solid-trans{
     background: transparent;
     border: 2px solid black;
+
+    &::after{
+        content: "Transparent Background";
+        display: inline-block;
+        width: 9.7rem;
+        position: absolute; 
+        background: #f4f4f4;
+        border-radius: 2px;
+        top: 42px; 
+        left: 50%;
+        transform: translate(-50%);
+        visibility: hidden;
+        z-index: 100001;
+        border: 1px solid grey;
+        padding: 5px;
+        color: #000;
+        font-size: 0.8rem;
+
+    }
+
+    &:hover{
+        &::after{
+            visibility: visible;
+
+        }
+    }
 }
 
 
@@ -39,14 +119,92 @@ input[type="radio"]:focus, :focus, :checked{
     background-position: top left;
     background-repeat: no-repeat;
     background-size: cover;
+
+    &::after{
+        content: "Mouse Tracking";
+        display: inline-block;
+        width: 6.5rem;
+        position: absolute; 
+        background: #f4f4f4;
+        border-radius: 2px;
+        top: 44px; 
+        left: 50%;
+        transform: translate(-50%);
+        visibility: hidden;
+        z-index: 100001;
+        border: 1px solid grey;
+        padding: 5px;
+        color: #000;
+        font-size: 0.8rem;
+
+    }
+
+    &:hover{
+        &::after{
+            visibility: visible;
+
+        }
+    }
 }
 
 #control-input-rotating{
     background-image: url('images/icon_rotate.svg');
+
+    &::after{
+        content: "Rotate";
+        display: inline-block;
+        width: 3.2rem;
+        position: absolute; 
+        background: #f4f4f4;
+        border-radius: 2px;
+        top: 44px; 
+        left: 50%;
+        transform: translate(-50%);
+        visibility: hidden;
+        z-index: 100001;
+        border: 1px solid grey;
+        padding: 5px;
+        color: #000;
+        font-size: 0.8rem;
+
+    }
+
+    &:hover{
+        &::after{
+            visibility: visible;
+
+        }
+    }
 }
 
 #control-input-drag{
     background-image: url('images/icon_clickdrag.svg');
+
+    &::after{
+        content: "Click and Drag";
+        display: inline-block;
+        width: 6.3rem;
+        position: absolute; 
+        background: #f4f4f4;
+        border-radius: 2px;
+        top: 44px; 
+        left: 50%;
+        transform: translate(-50%);
+        visibility: hidden;
+        z-index: 100001;
+        border: 1px solid grey;
+        padding: 5px;
+        color: #000;
+        font-size: 0.8rem;
+
+    }
+
+    &:hover{
+        &::after{
+            visibility: visible;
+
+        }
+    }
 }
 
 
@@ -56,9 +214,61 @@ input[type="radio"]:focus, :focus, :checked{
     background-position: top left;
     background-repeat: no-repeat;
     background-size: cover;
+
+    &::after{
+        content: "Perspective";
+        display: inline-block;
+        width: 5rem;
+        position: absolute; 
+        background: #f4f4f4;
+        border-radius: 2px;
+        top: 44px; 
+        left: 50%;
+        transform: translate(-50%);
+        visibility: hidden;
+        z-index: 100001;
+        border: 1px solid grey;
+        padding: 5px;
+        color: #000;
+        font-size: 0.8rem;
+
+    }
+ 
+    &:hover{
+        &::after{
+            visibility: visible;
+
+        }
+    }
 }
 
 
 #view-input-orthographic{
     background-image: url('images/icon_orthographic.svg');
+
+    &::after{
+        content: "Orthographic";
+        display: inline-block;
+        width: 5.3rem;
+        position: absolute; 
+        background: #f4f4f4;
+        border-radius: 2px;
+        top: 44px; 
+        left: 50%;
+        transform: translate(-50%);
+        visibility: hidden;
+        z-index: 100001;
+        border: 1px solid grey;
+        padding: 5px;
+        color: #000;
+        font-size: 0.8rem;
+
+    }
+ 
+    &:hover{
+        &::after{
+            visibility: visible;
+
+        }
+    }
 }
