@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 15px;
 }
  
  
@@ -13,21 +14,51 @@
     height: 40px;
     opacity: 1;
     background: #fff;
+    border-radius: 50%;
 
-    &:checked{
-        border: 2px solid black;
-    }
 }
+
+input[type="radio"]:focus, :focus, :checked{
+  outline: none;  
+  box-shadow: 0 0 1pt 2pt orange;
+} 
 
 #backgroundColor-input-solid2{
     background: black;
-
-    &:checked{
-        border: 2px solid white;
-    }
 }
 
 #backgroundColor-input-solid-trans{
     background: transparent;
     border: 2px solid black;
+}
+
+
+//Model control controls
+#control-input-mouse, #control-input-rotating, #control-input-drag{
+    background-image: url('images/icon_mouseTrack.svg');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#control-input-rotating{
+    background-image: url('images/icon_rotate.svg');
+}
+
+#control-input-drag{
+    background-image: url('images/icon_clickdrag.svg');
+}
+
+
+//view controls
+#view-input-perspective, #view-input-orthographic{
+    background-image: url('images/icon_perspective.svg');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#view-input-orthographic{
+    background-image: url('images/icon_orthographic.svg');
 }

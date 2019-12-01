@@ -57,7 +57,7 @@ function init() {
 
                 mesh = gltf.scene;
                 mesh.position.set(0,0,0);
-                mesh.scale.set( 4, 4, 4 );
+                mesh.scale.set( 5, 5, 5);
                 scene.add( mesh );
 
         },

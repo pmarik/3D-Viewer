@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
 
 </head>
-
+  
 <body>
     <header>
     </header>
@@ -22,22 +22,24 @@
                     <div class="backgrounds">
                         <h2>Background: </h2>
                         
-                        <input id="backgroundColor-input-solid-trans" type="radio" name="colorBackground" class="checkbox-toggle" value="transparent">
+                        <input id="backgroundColor-input-solid-trans" type="radio" name="colorBackground" class="checkbox-toggle" value="transparent" checked="checked">
                         <input id="backgroundColor-input-solid" type="radio" name="colorBackground" class="checkbox-toggle" value="white">
                         <input id="backgroundColor-input-solid2" type="radio" name="colorBackground" class="checkbox-toggle" value="black">
 
                     </div>
 
-                    <div class="controls">
-                        <h2>Controls</h2>
-                        <p>Mouse Tracking</p>
-                        <p>Rotating</p>
-                        <p>Click and Drag</p>
+                    <div class="controls-orient">
+                        <h2>Controls: </h2>
+                        <input id="control-input-mouse" type="radio" name="control-input" class="checkbox-toggle" value="mouse" checked="checked">
+                        <input id="control-input-rotating" type="radio" name="control-input" class="checkbox-toggle" value="rotating">
+                        <input id="control-input-drag" type="radio" name="control-input" class="checkbox-toggle" value="drag">
                     </div>
                     
                     <div class="perspective">
-                            <p>View: perspective, orthographic</p>
-                    </div>
+                        <h2>View: </h2>
+                        <input id="view-input-perspective" type="radio" name="view-input" class="checkbox-toggle" value="perspective" checked="checked">
+                        <input id="view-input-orthographic" type="radio" name="view-input" class="checkbox-toggle" value="orthographic">
+                    </div> 
                 </section>
 
                 <section id="main-canvas">         
