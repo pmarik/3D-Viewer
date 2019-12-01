@@ -268,6 +268,8 @@ function render() {
         else if(isRotateControl.checked){
 
             document.removeEventListener( 'mousemove', onMouseMove, false );
+            isMouseControl.disabled = true;
+            isMouseControl.classList.add('disabledMouse');
 
             // Rotate, zoom, and click-drag model
             controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -286,7 +288,11 @@ function render() {
             controls.update();
         }
         else if(isDragControl.checked){
+
+            isMouseControl.disabled = true;
             document.removeEventListener( 'mousemove', onMouseMove, false );
+            isMouseControl.classList.add('disabledMouse');
+
 
             // Rotate, zoom, and click-drag model
             controls = new THREE.OrbitControls(camera, renderer.domElement);

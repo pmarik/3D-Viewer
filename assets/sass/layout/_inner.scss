@@ -3,4 +3,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    @include breakpoint('<=small'){
+        h1{
+            margin-bottom: 10%;
+        }
+        #controls{
+            margin-bottom: 20%;
+        }
+    }
 }

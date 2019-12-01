@@ -5,6 +5,10 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 15px;
+
+    @include breakpoint('<=small'){
+        height: 150px;
+    }
 }
  
  
@@ -115,12 +119,13 @@ input[type="radio"]:focus, :focus, :checked{
 
 
 //Model control controls
+
 #control-input-mouse, #control-input-rotating, #control-input-drag{
     background-image: url('images/icon_mouseTrack.svg');
     background-position: top left;
     background-repeat: no-repeat;
     background-size: cover;
-
+    
     &::after{
         content: "Mouse Tracking";
         display: inline-block;
@@ -132,7 +137,7 @@ input[type="radio"]:focus, :focus, :checked{
         left: 50%;
         transform: translate(-50%);
         visibility: hidden;
-        z-index: 100001;
+        z-index: 1000001;
         border: 1px solid grey;
         padding: 5px;
         color: #000;
@@ -147,6 +152,18 @@ input[type="radio"]:focus, :focus, :checked{
         }
     }
 }
+
+.disabledMouse{
+    background-color: grey;
+
+    &::after{
+        content: "Refresh to enable" !important;
+        width: 7.4rem !important;
+    }
+
+}
+
+
 
 #control-input-rotating{
     background-image: url('images/icon_rotate.svg');

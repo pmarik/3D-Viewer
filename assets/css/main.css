@@ -262,6 +262,9 @@ hr {
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 15px; }
+  @media screen and (max-width: 746px) {
+    #controls {
+      height: 150px; } }
 
 .checkbox-toggle {
   position: relative;
@@ -364,13 +367,19 @@ input[type="radio"]:focus, :focus, :checked {
     -ms-transform: translate(-50%);
     transform: translate(-50%);
     visibility: hidden;
-    z-index: 100001;
+    z-index: 1000001;
     border: 1px solid grey;
     padding: 5px;
     color: #000;
     font-size: 0.8rem; }
   #control-input-mouse:hover::after, #control-input-rotating:hover::after, #control-input-drag:hover::after {
     visibility: visible; }
+
+.disabledMouse {
+  background-color: grey; }
+  .disabledMouse::after {
+    content: "Refresh to enable" !important;
+    width: 7.4rem !important; }
 
 #control-input-rotating {
   background-image: url("images/icon_rotate.svg"); }
@@ -575,3 +584,8 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
+  @media screen and (max-width: 746px) {
+    .inner h1 {
+      margin-bottom: 10%; }
+    .inner #controls {
+      margin-bottom: 20%; } }
