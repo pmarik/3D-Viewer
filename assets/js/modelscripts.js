@@ -49,8 +49,9 @@ function init() {
     camera.lookAt(0,0,0);
     
     // Initial orthographic camera setup to be referenced when toggling ortho-perspective view
-    cameraOrtho = new THREE.OrthographicCamera( window.innerWidth / - 50, window.innerWidth / 50, window.innerHeight / 50, window.innerHeight / -50, - 500, 1000);
-    cameraOrtho.position.set(0, 0, 40);
+    cameraOrtho = new THREE.OrthographicCamera( window.innerWidth / - 50, window.innerWidth / 50, window.innerHeight / 50, window.innerHeight / - 50, - 500, 1000);
+
+    cameraOrtho.position.set(0, 0, 20);
 
     // Copy of perspective camera to be referenced when ortho-perspective view is toggled
     cameraPerspective = camera.clone();
@@ -149,29 +150,22 @@ function getWindowSizes(){
     let height;
 
     let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
 
-    if(windowWidth >= 2000){
-        width = 1200;
-        height = 600;
-    }
+    // if(windowWidth >= 1500){
+        width = windowWidth - 200;
+        height = windowHeight - 200;
+    // }
 
-    if(windowWidth >= 1000){
-         width = 800 ;
-         height = 500;
-    }
-    else if (windowWidth >= 700){
-        width = 650;
-        height = 300;
-    }
+     if(windowWidth <= 700){
+         width = windowWidth - 50;
+         height = 350;
 
-    else if (windowWidth >=400){
-        width = 400;
-        height = 200;
-    }
-    else {
-       width = 225;
-       height = 200;
-    }
+         document.removeEventListener( 'mousemove', onMouseMove, false );
+         isMouseControl.disabled = true;
+         isMouseControl.classList.add('disabledMouse');
+         isRotateControl.checked = true;
+     }
 
     return [width, height];
     
@@ -218,8 +212,6 @@ function onResize( event ) {
 function update(){
     var easeAmount = 8;
 
-    console.log(window.innerWidth);
-
     document.addEventListener( 'mousemove', onMouseMove, false );
 
     look.x += (mouse.x-look.x)/easeAmount;
@@ -238,10 +230,17 @@ function render() {
     if(isOrthographic.checked){
         //Set camera to initial orthographic camera
         camera = cameraOrtho;
+        mesh.scale.set( 2, 2, 2);
+
     }
     else{
         //Set camera to reference of initial perspective camera
         camera = cameraPerspective;
+        if(modelLoaded){
+            mesh.scale.set( 3, 3, 3);
+
+        }
+
     }
 
     //set background color based on checkbox inputs

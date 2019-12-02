@@ -57,7 +57,7 @@ input, select, textarea {
 @-ms-viewport {
   width: device-width; }
 
-body {
+body, html {
   -ms-overflow-style: scrollbar;
   -ms-scroll-chaining: none;
   overscroll-behavior: contain; }
@@ -264,7 +264,10 @@ hr {
   margin-bottom: 15px; }
   @media screen and (max-width: 746px) {
     #controls {
-      height: 150px; } }
+      height: 150px;
+      -webkit-box-pack: left;
+      -ms-flex-pack: left;
+      justify-content: left; } }
 
 .checkbox-toggle {
   position: relative;
@@ -302,6 +305,9 @@ input[type="radio"]:focus, :focus, :checked {
     font-size: 0.8rem; }
   #backgroundColor-input-solid2:hover::after {
     visibility: visible; }
+  @media screen and (max-width: 746px) {
+    #backgroundColor-input-solid2::after {
+      display: none; } }
 
 #backgroundColor-input-solid::after {
   content: "White Background";
@@ -324,6 +330,10 @@ input[type="radio"]:focus, :focus, :checked {
 
 #backgroundColor-input-solid:hover::after {
   visibility: visible; }
+
+@media screen and (max-width: 746px) {
+  #backgroundColor-input-solid::after {
+    display: none; } }
 
 #backgroundColor-input-solid-trans {
   background: transparent;
@@ -348,12 +358,19 @@ input[type="radio"]:focus, :focus, :checked {
     font-size: 0.8rem; }
   #backgroundColor-input-solid-trans:hover::after {
     visibility: visible; }
+  @media screen and (max-width: 746px) {
+    #backgroundColor-input-solid-trans::after {
+      display: none; } }
+
+@media screen and (max-width: 746px) {
+  #control-input-mouse {
+    cursor: no-drop; } }
 
 #control-input-mouse, #control-input-rotating, #control-input-drag {
   background-image: url("images/icon_mouseTrack.svg");
   background-position: top left;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: 100%; }
   #control-input-mouse::after, #control-input-rotating::after, #control-input-drag::after {
     content: "Mouse Tracking";
     display: inline-block;
@@ -374,6 +391,9 @@ input[type="radio"]:focus, :focus, :checked {
     font-size: 0.8rem; }
   #control-input-mouse:hover::after, #control-input-rotating:hover::after, #control-input-drag:hover::after {
     visibility: visible; }
+  @media screen and (max-width: 746px) {
+    #control-input-mouse::after, #control-input-rotating::after, #control-input-drag::after {
+      display: none; } }
 
 .disabledMouse {
   background-color: grey; }
@@ -403,6 +423,9 @@ input[type="radio"]:focus, :focus, :checked {
     font-size: 0.8rem; }
   #control-input-rotating:hover::after {
     visibility: visible; }
+  @media screen and (max-width: 746px) {
+    #control-input-rotating::after {
+      display: none; } }
 
 #control-input-drag {
   background-image: url("images/icon_clickdrag.svg"); }
@@ -426,12 +449,15 @@ input[type="radio"]:focus, :focus, :checked {
     font-size: 0.8rem; }
   #control-input-drag:hover::after {
     visibility: visible; }
+  @media screen and (max-width: 746px) {
+    #control-input-drag::after {
+      display: none; } }
 
 #view-input-perspective, #view-input-orthographic {
   background-image: url("images/icon_perspective.svg");
   background-position: top left;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: 100%; }
   #view-input-perspective::after, #view-input-orthographic::after {
     content: "Perspective";
     display: inline-block;
@@ -452,6 +478,9 @@ input[type="radio"]:focus, :focus, :checked {
     font-size: 0.8rem; }
   #view-input-perspective:hover::after, #view-input-orthographic:hover::after {
     visibility: visible; }
+  @media screen and (max-width: 746px) {
+    #view-input-perspective::after, #view-input-orthographic::after {
+      display: none; } }
 
 #view-input-orthographic {
   background-image: url("images/icon_orthographic.svg"); }
@@ -475,6 +504,9 @@ input[type="radio"]:focus, :focus, :checked {
     font-size: 0.8rem; }
   #view-input-orthographic:hover::after {
     visibility: visible; }
+  @media screen and (max-width: 746px) {
+    #view-input-orthographic::after {
+      display: none; } }
 
 #main-canvas {
   width: 100%;
@@ -584,8 +616,3 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
-  @media screen and (max-width: 746px) {
-    .inner h1 {
-      margin-bottom: 10%; }
-    .inner #controls {
-      margin-bottom: 20%; } }

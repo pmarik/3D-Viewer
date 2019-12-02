@@ -8,6 +8,7 @@
 
     @include breakpoint('<=small'){
         height: 150px;
+        justify-content: left;
     }
 }
  
@@ -56,6 +57,12 @@ input[type="radio"]:focus, :focus, :checked{
 
         }
     }
+
+    @include breakpoint('<=small'){
+        &::after{
+            display: none;
+        }
+    }
 }
 
 #backgroundColor-input-solid{
@@ -82,6 +89,11 @@ input[type="radio"]:focus, :focus, :checked{
         &::after{
             visibility: visible;
 
+        }
+    }
+    @include breakpoint('<=small'){
+        &::after{
+            display: none;
         }
     }
 }
@@ -115,16 +127,27 @@ input[type="radio"]:focus, :focus, :checked{
 
         }
     }
+    @include breakpoint('<=small'){
+        &::after{
+            display: none;
+        }
+    }
 }
 
 
 //Model control controls
 
+#control-input-mouse{
+    @include breakpoint('<=small'){
+        cursor: no-drop;
+    }
+}
+
 #control-input-mouse, #control-input-rotating, #control-input-drag{
     background-image: url('images/icon_mouseTrack.svg');
     background-position: top left;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     
     &::after{
         content: "Mouse Tracking";
@@ -149,6 +172,11 @@ input[type="radio"]:focus, :focus, :checked{
         &::after{
             visibility: visible;
 
+        }
+    }
+    @include breakpoint('<=small'){
+        &::after{
+            display: none;
         }
     }
 }
@@ -193,6 +221,11 @@ input[type="radio"]:focus, :focus, :checked{
 
         }
     }
+    @include breakpoint('<=small'){
+        &::after{
+            display: none;
+        }
+    }
 }
 
 #control-input-drag{
@@ -223,6 +256,11 @@ input[type="radio"]:focus, :focus, :checked{
 
         }
     }
+    @include breakpoint('<=small'){
+        &::after{
+            display: none;
+        }
+    }
 }
 
 
@@ -231,7 +269,7 @@ input[type="radio"]:focus, :focus, :checked{
     background-image: url('images/icon_perspective.svg');
     background-position: top left;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;  
 
     &::after{
         content: "Perspective";
@@ -256,6 +294,11 @@ input[type="radio"]:focus, :focus, :checked{
         &::after{
             visibility: visible;
 
+        }
+    }
+    @include breakpoint('<=small'){
+        &::after{
+            display: none;
         }
     }
 }
@@ -287,6 +330,11 @@ input[type="radio"]:focus, :focus, :checked{
         &::after{
             visibility: visible;
 
+        }
+    }
+    @include breakpoint('<=small'){
+        &::after{
+            display: none;
         }
     }
 }
