@@ -157,7 +157,7 @@ function getWindowSizes(){
         height = windowHeight - 200;
     // }
 
-     if(windowWidth <= 700){
+    if(windowWidth <= 700){
          width = windowWidth - 50;
          height = 350;
 
@@ -165,6 +165,10 @@ function getWindowSizes(){
          isMouseControl.disabled = true;
          isMouseControl.classList.add('disabledMouse');
          isRotateControl.checked = true;
+
+     }
+     if(windowWidth <= 350){
+         height = 250;
      }
 
     return [width, height];
@@ -276,10 +280,10 @@ function render() {
             controls.autoRotateSpeed = 2;
             controls.enableZoom = false;
             controls.enablePan = false;
-            //    controls.maxDistance = 100;
-            //    controls.minDistance = 10;
-            //    controls.maxZoom = 2;
-            //    controls.minZoom = 0.5;
+            controls.maxDistance = 100;
+            controls.minDistance = 10;
+            controls.maxZoom = 2;
+            controls.minZoom = 0.5;
             controls.dampingFactor = 0.002;
             controls.rotateSpeed = 0.001;
             //    controls.enabled = false;
@@ -299,10 +303,10 @@ function render() {
             controls.autoRotate = false;
             controls.enableZoom = false;
             controls.enablePan = true;
-            //    controls.maxDistance = 100;
-            //    controls.minDistance = 10;
-            //    controls.maxZoom = 2;
-            //    controls.minZoom = 0.5;
+               controls.maxDistance = 100;
+               controls.minDistance = 10;
+               controls.maxZoom = 2;
+               controls.minZoom = 0.5;
             controls.dampingFactor = 0.002;
             controls.rotateSpeed = 0.001;
             
